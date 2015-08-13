@@ -1,0 +1,24 @@
+name = Toanlm
+description = Create new template tranning drupal 7 - by toanlm
+version = 0.1
+core = 7.x
+engine = phptemplate
+screenshot = screenshot.png
+
+
+regions[header] = Header
+regions[highlighted] = Hight system
+regions[main_menu] = Main menu custom
+regions[content]= Content
+regions[sidebar_first] = Left sidebar
+regions[sidebar_second] = Right sidebar
+regions[footer] = Footer
+
+
+stylesheets[all][] = css/style.css
+stylesheets[print][] = css/print.css
+
+scripts[] = js/main.js
+
+settings[google_url] = 'http://google.com'
+settings[social_display] = 1
