@@ -1,0 +1,62 @@
+<?php
+/**
+ * Implements hook_menu().
+ */
+function manage_countries_menu() {
+  $items = array();
+  $items['admin/config/regional/manage_countries'] = array(
+    'title' => 'Countries',
+    'description' => 'Manage countries: List, edit, or add countries.',
+    'page callback' => 'manage_countries_admin_overview',
+    'access arguments' => array('administer site configuration'),
+    'file' => 'manage_countries.admin.inc',
+  );
+  /*$items['admin/config/regional/manage_countries/%country/edit'] = array(
+    'title' => 'Edit',
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+    'weight' => -10,
+  );*/
+  $items['admin/config/regional/manage_countries/%manage_country/edit'] = array(
+    'title callback' => 'countries_page_title',
+    'title arguments' => array(4),
+    //'title' => 'Edit a country',
+    'description' => 'Edit a country.',
+    'type' => MENU_LOCAL_TASK,//MENU_VISIBLE_IN_BREADCRUMB
+    'page callback' => 'manage_countries_admin_page',
+    'page arguments' => array(4),
+    'access arguments' => array('administer site configuration'),
+    'file' => 'manage_countries.admin.inc',
+  );
+
+  $items['admin/config/regional/manage_countries/add'] = array(
+    'title' => 'Add country',
+    'description' => 'Admin page to add a country.',
+    'page callback' => 'manage_countries_admin_page',
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_LOCAL_ACTION,
+    'weight' => 1,
+    'file' => 'manage_countries.admin.inc',
+  );
+
+  $items['admin/config/regional/manage_countries/%manage_country/delete'] = array(
+    'title' => 'Delete country',
+    'description' => 'Country delete confirmation form.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('manage_countries_admin_delete', 4),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_VISIBLE_IN_BREADCRUMB,
+    'file' => 'manage_countries.admin.inc',
+  );
+
+
+  //echo "<pre>"; var_dump($items); die("hello");
+    return $items;
+}  
+
+function countries_page_title($country = null) {
+  return check_plain($country->country_name);
+}
+function manage_country_load($cid=0) {
+  return db_query("SELECT * FROM manage_countries WHERE cid = :cid", array(':cid' => $cid))->fetchObject();
+}
+?>

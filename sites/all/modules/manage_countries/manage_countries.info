@@ -1,0 +1,11 @@
+name = Manage Countries
+core = 7.x
+
+configure = admin/config/regional/manage_countries
+recommends[] = countryicons
+
+version = "7.x-2.3"
+core = "7.x"
+project = "manage_contries"
+datestamp = "1409450929"
+

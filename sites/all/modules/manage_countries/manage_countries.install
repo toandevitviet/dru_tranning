@@ -1,0 +1,54 @@
+<?php
+/**
+ * Implements hook_schema().
+ */
+function manage_countries_schema() {
+  $schema = array();
+  $schema['manage_countries'] = array(
+    'description' => 'Maintains a country database.',
+    'fields' => array(
+      'cid' => array(
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'description' => 'Primary Key: Unique country ID. Required for the country bundle.',
+      ),
+      'country_code' => array(
+        'description' => 'Country Code.',
+        'type' => 'char',
+        'length' => 2,
+        'not null' => TRUE,
+      ),
+      'country_name' => array(
+        'description' => 'Country Name.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'status' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 1,
+        'description' => 'Whether the country is enabled.',
+      ),
+    ),
+    'primary key' => array('cid'),
+    'unique keys' => array(
+      'country_code' => array('country_code'),
+      'country_name' => array('country_name'),
+    ),
+    'indexes' => array(
+      'status' => array('status'),
+    ),
+
+  );
+
+  return $schema;
+}
+function manage_countries_install() {
+  drupal_install_schema('manage_countries');
+}
+
+function manage_countries_uninstall() {
+  drupal_uninstall_schema('manage_countries');
+}
