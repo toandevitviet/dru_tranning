@@ -1,0 +1,5 @@
+name = First
+desciption = First module custom by toanlm
+package = Drupal 7 by toanlm first module
+core = 7.x
+files[] = first.module

@@ -5,6 +5,8 @@ core = 7.x
 engine = phptemplate
 screenshot = screenshot.png
 
+base theme = garland 
+
 
 regions[header] = Header
 regions[highlighted] = Hight system
@@ -18,7 +20,14 @@ regions[footer] = Footer
 stylesheets[all][] = css/style.css
 stylesheets[print][] = css/print.css
 
+;stylesheets-conditional[IE][all][] = css/ie.css
+stylesheets-conditional[lte IE 7][all][] = css/ie7.css
+stylesheets-conditional[lte IE 6][all][] = css/ie6.css
+stylesheets-conditional[IE 8][all][] = css/ie8.css
+
+
 scripts[] = js/main.js
 
 settings[google_url] = 'http://google.com'
 settings[social_display] = 1
+settings[bg_body] = 'white'

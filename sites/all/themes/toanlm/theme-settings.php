@@ -23,5 +23,25 @@ function toanlm_form_system_theme_settings_alter(&$form, $form_state) {
     '#description'   => t("Checked this option to show social icon."),
   );
   
+  //group option
+  $form['other_seting'] = array(
+    '#type' => 'fieldset',
+    '#title' => 'Other setting',
+    '#collapsible' => true,
+    '#collapsed' => false,
+  );
+  
+  //echo color_scheme_form('toanlm');
+  $form['other_seting']['bg_body'] = array(
+       '#type' => 'select',
+       '#title' => t('Background color'),
+       '#options' => array(
+         'red' => t('Red'),
+         'yellow' => t('Yellow'),
+         'white' => t('White'),
+       ),
+       '#default_value' => theme_get_setting('bg_body', 'toanlm'),
+       '#description' => t('Set this to background body.'),
+   );
 }
 ?>

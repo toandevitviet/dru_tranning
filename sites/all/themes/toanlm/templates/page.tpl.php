@@ -1,6 +1,11 @@
+<style>
+    body {
+        background-color: <?php print theme_get_setting('bg_body', 'toanlm'); ?>;
+    }
+</style>
 <div class="main-wrap">
 <header id="header">
-    <div class="logo">
+    <div class="logo"> 
         <?php //krumo($logo);?>
         <img src="<?php print $logo;?>" alt="<?php print $site_name; ?>" title="<?php print $site_name; ?>" />
     </div>
