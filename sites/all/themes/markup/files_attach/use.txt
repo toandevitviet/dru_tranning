@@ -1,0 +1,6 @@
+<i class="sprite sprite-facebook"></i>
+<i class="sprite sprite-icon1"></i>
+<i class="sprite sprite-icon2"></i>
+<i class="sprite sprite-icon3"></i>
+<i class="sprite sprite-rss"></i>
+<i class="sprite sprite-twitter"></i>

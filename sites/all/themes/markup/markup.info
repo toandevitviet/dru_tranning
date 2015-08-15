@@ -1,0 +1,16 @@
+;introduction template
+name = Markup template
+description = Markup new template from begin
+screenshot = screenshot.png
+pakage = core
+core = 7.x
+
+;regions
+regions[header] = Header
+regions[slider_welcome] = Slider welcome
+regions[advs] = Advs homepage
+regions[content]= Content
+regions[sidebar_right] = Right sidebar
+regions[footer] = Footer
+
+stylesheets[all][] = css/style.css

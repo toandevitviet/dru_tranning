@@ -1,0 +1,21 @@
+logo
+primary link
+==> HEADER
+
+slider show
+block advs
+list news
+==> SLIDER_WELCOME
+
+
+new items
+==> MAIN_CONTENT
+
+search
+login form
+==> RIGHT
+
+second link
+social icon
+copyright
+==> FOOTER
